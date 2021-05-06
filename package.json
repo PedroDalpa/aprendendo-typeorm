@@ -2,6 +2,7 @@
    "name": "quicktypeorm",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
+   "license": "MIT",
    "devDependencies": {
       "@types/cors": "^2.8.10",
       "@types/express": "^4.17.11",

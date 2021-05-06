@@ -4,7 +4,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
+import { Class } from './Class';
 
 @Entity('student')
 export default class Student {
@@ -17,9 +20,9 @@ export default class Student {
   @Column()
   key: number;
 
-  @CreateDateColumn({ name: 'created_At' })
-  createdAt: Date;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @UpdateDateColumn({ name: 'updated_At' })
-  updatedAt: Date;
+  @UpdateDateColumn()
+  updated_at: Date;
 }

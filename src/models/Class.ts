@@ -4,8 +4,13 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import Lesson from './Lesson';
+import Student from './Student';
 
 @Entity()
 export class Class {
@@ -17,6 +22,9 @@ export class Class {
 
   @Column()
   duration: number;
+
+  @OneToMany(() => Lesson, (classe) => Class)
+  lessons: Lesson[];
 
   @CreateDateColumn()
   created_at: Date;
