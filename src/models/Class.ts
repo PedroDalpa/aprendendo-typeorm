@@ -26,6 +26,10 @@ export class Class {
   @OneToMany(() => Lesson, (classe) => Class)
   lessons: Lesson[];
 
+  @ManyToMany((type) => Student)
+  @JoinTable()
+  students: Student[];
+
   @CreateDateColumn()
   created_at: Date;
 

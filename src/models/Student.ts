@@ -20,6 +20,9 @@ export default class Student {
   @Column()
   key: number;
 
+  @Column()
+  email: string;
+
   @CreateDateColumn()
   created_at: Date;
 
