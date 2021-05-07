@@ -1,4 +1,5 @@
 import { IsEmail, Max, MaxLength, Min, MinLength } from 'class-validator';
+import { MyDBCrypto } from '../helpers/DBCrypto';
 import {
   Column,
   CreateDateColumn,
@@ -12,7 +13,11 @@ export default class Student {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({
+    type: 'varchar',
+    nullable: false,
+    transformer: MyDBCrypto,
+  })
   @MinLength(3, { message: 'Um nome precisa ter no minimo 3 caracteres' })
   @MaxLength(50, { message: 'Um nome precisa ter no máximo 50 caracteres' })
   name: string;
@@ -22,7 +27,7 @@ export default class Student {
   @Max(20)
   key: number;
 
-  @Column()
+  @Column({ transformer: MyDBCrypto })
   @IsEmail()
   email: string;
 

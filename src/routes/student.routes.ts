@@ -30,7 +30,11 @@ studentRouter.post('/', async (request, response) => {
 });
 
 studentRouter.get('/', async (request, response) => {
-  response.json(await getRepository(Student).find());
+  try {
+    response.json(await getRepository(Student).find());
+  } catch (error) {
+    return response.status(500).json(error.message);
+  }
 });
 
 export { studentRouter };
