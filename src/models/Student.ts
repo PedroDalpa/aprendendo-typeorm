@@ -18,8 +18,8 @@ export default class Student {
     nullable: false,
     transformer: MyDBCrypto,
   })
-  @MinLength(3, { message: 'Um nome precisa ter no minimo 3 caracteres' })
-  @MaxLength(50, { message: 'Um nome precisa ter no máximo 50 caracteres' })
+  @MinLength(3, { message: 'Um   precisa ter no minimo 3 caracteres' })
+  @MaxLength(50, { message: 'Um nome  ter no máximo 50 caracteres' })
   name: string;
 
   @Column()

@@ -1,3 +1,4 @@
+
 import { Router } from 'express';
 import { classRouter } from './class.routes';
 import { contentRouter } from './content.routes';

@@ -32,6 +32,8 @@ export class Class {
 
   @CreateDateColumn()
   created_at: Date;
+  @Column()
+  nome: string;
 
   @UpdateDateColumn()
   updated_at: Date;
